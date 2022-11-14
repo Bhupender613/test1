@@ -30,8 +30,8 @@ const GenderSelect = () => {
                 username
               </th>
             </tr>
-          </thead>
-
+          </thead>{" "}
+          dfdfdf
           <tbody>
             {dataget.users.map((user, index) => (
               <>
