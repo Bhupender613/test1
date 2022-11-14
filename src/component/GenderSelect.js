@@ -1,16 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
 import Data from "./Getdata";
+import axios from "axios";
 
 const GenderSelect = () => {
   const set = useContext(Data);
   const [dataget, setdataget] = useState("");
 
   useEffect(() => {
-    fetch(`${set.value}`)
-      .then((response) => response.json())
-      .then((data) => setdataget(data));
+    axios.get(`${set.value}`).then((response) => setdataget(response.data));
   }, [set.value]);
-  console.log(dataget.users);
 
   return (
     <>
@@ -30,8 +28,7 @@ const GenderSelect = () => {
                 username
               </th>
             </tr>
-          </thead>{" "}
-          dfdfdf
+          </thead>
           <tbody>
             {dataget.users.map((user, index) => (
               <>
