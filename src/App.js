@@ -1,0 +1,34 @@
+import logo from './logo.svg';
+import './App.css';
+import {Routes,Route,Link} from 'react-router-dom'
+import Selectdata from './component/Selectdata';
+import Table from './component/getTable';
+import Data from './component/Getdata';
+import {useState} from 'react'
+import GenderSelect from './component/GenderSelect';
+
+function App() {
+const [value,setvalue] = useState("")
+
+  return (<>
+  <h1 className='center'>Get Data </h1>
+<Data.Provider value={{value,setvalue}} >
+<Selectdata />
+
+
+
+
+
+  <Routes>
+<Route path='/Selectdata' element={<Selectdata />} ></Route>
+<Route path='/getTable' element={<Table />} ></Route>
+<Route path='/GenderSelect' element={<GenderSelect />} ></Route>
+
+
+  </Routes>
+  </Data.Provider>
+  </>
+  );
+}
+
+export default App;
