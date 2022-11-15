@@ -15,7 +15,7 @@ function App() {
       <h1 className="center">Get Data </h1>
       <Data.Provider value={{ value, setvalue }}>
         <Selectdata />
-
+        asasa
         <Routes>
           <Route path="/Selectdata" element={<Selectdata />}></Route>
           <Route path="/getTable" element={<Table />}></Route>
