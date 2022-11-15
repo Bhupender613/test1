@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Selectdata from "./component/Selectdata";
 import Table from "./component/getTable";
@@ -15,7 +14,6 @@ function App() {
       <h1 className="center">Get Data </h1>
       <Data.Provider value={{ value, setvalue }}>
         <Selectdata />
-        asasa
         <Routes>
           <Route path="/Selectdata" element={<Selectdata />}></Route>
           <Route path="/getTable" element={<Table />}></Route>
