@@ -3,7 +3,7 @@ import Data from "./Getdata";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const GenderSelect = () => {
+const Inputhandle = () => {
   const set = useContext(Data);
   const navigete = useNavigate();
 
@@ -60,4 +60,4 @@ const GenderSelect = () => {
   );
 };
 
-export default GenderSelect;
+export default Inputhandle;

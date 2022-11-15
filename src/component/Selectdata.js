@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Data from "./Getdata";
 import { useNavigate } from "react-router-dom";
 const Selectdata = () => {
+  const [find, setfind] = useState("");
   const [usercolltion, setusercolltion] = useState("");
   const set = useContext(Data);
 
@@ -22,6 +23,13 @@ const Selectdata = () => {
     let url = `https://dummyjson.com/users/filter?limit=10&key=gender&value=${e.target.value}`;
     set.setvalue(url);
     navigete("/GenderSelect");
+  };
+
+  const handlechangeinput = (e) => {
+    setfind(e.target.value);
+    let url = `https://dummyjson.com/users/search?q=${e.target.value}`;
+    set.setvalue(url);
+    navigete("/inputhandle");
   };
 
   return (
@@ -46,6 +54,10 @@ const Selectdata = () => {
             <option value="male"> male</option>
             <option value="female">female</option>
           </select>
+        </div>
+        <div className="col-md-3">
+          <label>name : </label>
+          <input value={find} onChange={handlechangeinput} />
         </div>
       </div>
     </div>
